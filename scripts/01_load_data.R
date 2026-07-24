@@ -1,14 +1,8 @@
-# =====================================================
-# EIRT-NBack-Analysis
-# File: 01_load_data.R
-# Author: Elnaz Fazli
-# =====================================================
-
 library(haven)
-library(dplyr)
 
-# Load data
-data <- read_sav("data/mydata1.sav")
+file_path <- "data/mydata1.sav"
 
-# Display data structure
-str(data)
+if (!file.exists(file_path))
+  stop("Dataset not found.")
+
+df <- read_sav(file_path)
