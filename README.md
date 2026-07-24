@@ -2,48 +2,65 @@
 
 ## Overview
 
-This repository contains the R code developed for my M.Sc. thesis in Psychometrics at Allameh Tabataba'i University.
+This repository contains the R analysis pipeline developed for my MSc thesis in Psychometrics.
 
-The project applies the Explanatory Item Response Theory (EIRT) model to investigate individual differences in cognitive performance during the N-back working memory task.
+The project investigates individual differences in cognitive performance during the N-back task using the Explanatory Item Response Theory (EIRT) framework.
 
----
+Predictors include:
 
-## Research Objective
-
-To examine how individual differences contribute to cognitive performance using explanatory item response models.
+- Big Five Personality Traits (NEO-FFI)
+- Raven's Progressive Matrices (Fluid Intelligence)
+- Reaction Time
+- Personality × Intelligence interaction effects
 
 ---
 
 ## Methods
 
 - Explanatory Item Response Theory (EIRT)
-- Item Response Theory (IRT)
-- Logistic Mixed Models
-- R Statistical Computing
-
----
-
-## Data
-
-The original dataset cannot be shared because it contains human participant data.
-
-This repository provides:
-
-- R scripts
-- Data preprocessing workflow
-- Statistical analysis pipeline
-- Figures and outputs that do not disclose participant information
+- Extended Partial Credit Model (EPCM)
+- Latent Regression
+- Cross Validation
+- LASSO Regression
+- Variance Inflation Factor (VIF)
+- Cook's Distance
+- Model Comparison
 
 ---
 
 ## Software
 
 - R
-- tidyverse
-- lme4
-- mirt
+- TAM
+- glmnet
+- dplyr
+- haven
 - psych
-- ggplot2
+- car
+
+---
+
+## Repository Structure
+
+```
+scripts/
+    01_load_data.R
+    02_prepare_data.R
+    03_score_NEO.R
+    04_prepare_EIRT_data.R
+    05_fit_EIRT_model.R
+    06_latent_regression.R
+    07_model_validation.R
+    08_model_diagnostics.R
+```
+
+---
+
+## Thesis
+
+**Examining Individual Differences in Intelligence and Personality and Predicting Cognitive Performance in the N-back Task Using the Explanatory Item Response Theory (EIRT) Model**
+
+MSc in Psychometrics
 
 ---
 
@@ -51,13 +68,15 @@ This repository provides:
 
 **Elnaz Fazli**
 
-M.Sc. in Psychometrics
+MSc in Psychometrics
 
-Research Interests:
+Research interests:
 
 - Cognitive Neuroscience
-- Brain Mapping
-- EEG/qEEG
 - Psychometrics
-- Statistical Modeling
-- Neurotechnology
+- Item Response Theory
+- Brain Mapping
+- EEG
+- qEEG
+- Cognitive Assessment
+
