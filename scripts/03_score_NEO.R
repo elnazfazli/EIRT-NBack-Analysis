@@ -35,3 +35,22 @@ for (scale in names(reverse_items_nums)) {
     })
   }
 }
+                       for (scale in names(neo_items_nums)) {
+  nums <- neo_items_nums[[scale]]
+  cols <- vapply(nums,FUN.VALUE = character(1),FUN = function(n) find_col_for_number(n,data_neo))
+  present <- !is.na(cols)
+  cols_found <- cols[present]
+  scale_name <- switch(scale,
+                       neuroticism = "NEO_N",
+                       extraversion = "NEO_E",
+                       openness = "NEO_O",
+                       agreeableness = "NEO_A",
+                       conscientiousness = "NEO_C")
+  if (length(cols_found) > 0) {
+    data_neo[cols_found] <- lapply(data_neo[cols_found],to_numeric_safe)
+    data_neo[[scale_name]] <- rowSums(data_neo[cols_found],na.rm = FALSE)
+  } else {
+    data_neo[[scale_name]] <- NA_real_
+  }
+}
+
