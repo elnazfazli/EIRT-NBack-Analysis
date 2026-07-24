@@ -6,7 +6,7 @@
 ibrary(haven)    
 library(dplyr)  
 library(psych)    # describe
-library(TAM)      # مدل EIRT / tam.mml / tam.latreg
+library(TAM)      # EIRT / tam.mml / tam.latreg
 library(car)      # vif
 file_path <- "data/mydata1.sav"
 if (!file.exists(file_path)) stop("فایل پیدا نشد.بررسی مسیر 'file_path'")
