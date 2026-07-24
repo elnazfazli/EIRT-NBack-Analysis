@@ -1,0 +1,1 @@
+to_numeric_safe <- function(x) as.numeric(as.character(x)) find_col_for_number <- function(num,df,prefixes = c("Neo","NEO","neo","q")) { for (p in prefixes) { nm <- paste0(p,num) if (nm %in% names(df)) return(nm) } return(NA_character_) }
