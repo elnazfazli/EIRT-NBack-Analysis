@@ -1,3 +1,8 @@
+# ============================================================
+# Prepare dataset
+# Rename variables
+# Identify N-back item columns
+# ============================================================
 if ("nback" %in% names(df)) df <- df %>% rename(Nback_total = nback)
 if ("timenback" %in% names(df)) df <- df %>% rename(RT_ms = timenback)
 if ("IQ" %in% names(df)) df <- df %>% rename(Raven_IQ = IQ)
