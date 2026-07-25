@@ -1,12 +1,12 @@
- # --- 7.نقاط تأثیرگذار (Cook's distance) ---
+# Identify influential observations using Cook's distance
     fit <- fit_base
     cooks <- cooks.distance(fit)
     influential <- which(cooks > (4 / (nrow (df_base) - length(coef(fit)))))
     cat("Influential obs (Cook's):",if(length(influential)>0) paste(influential,collapse = ",") else "None","\n")
     
-       # برازش
+    # Model fit statistics
     cat("LogLik:",mod_lat$logLik," | AIC:",mod_lat$AIC," | BIC:",mod_lat$BIC,"\n")
-    # استخراج theta برای VIF
+   # Extract theta estimates for VIF analysis
     theta_eap_model <- mod_lat$person$EAP
     df_lm <- cbind(theta_eap = theta_eap_model,data_neo[,preds,drop = FALSE])
     df_lm <- df_lm[complete.cases(df_lm),]
