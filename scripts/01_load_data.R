@@ -3,14 +3,14 @@
 # Author  : Elnaz Fazli
 # Purpose : Load raw dataset
 # ============================================================
-library(haven)    # خواندن SPSS
-library(dplyr)    # ویرایش دیتا
+library(haven)    # Read SPSS data
+library(dplyr)    # Data manipulation
 library(psych)    # describe
-library(TAM)      # مدل EIRT / tam.mml / tam.latreg
-library(car)      # vif
+library(TAM)      # Explanatory IRT modeling
+library(car)       # Variance Inflation Factor (VIF)
 
-# ---------- 2.مسیر فایل و خواندن دیتا ----------
+# Load required packages
 file_path <- "data/mydata1.sav"
-if (!file.exists(file_path)) stop("فایل پیدا نشد.بررسی مسیر 'file_path'")
+if (!file.exists(file_path)) stop("Data file not found. Please check the 'file_path'.")
 df <- haven::read_sav(file_path)
 
